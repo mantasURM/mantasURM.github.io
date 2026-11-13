@@ -1,0 +1,464 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+
+:root {
+  --default-font: "Lora", Georgia, serif;
+  --heading-font: "Montserrat", Arial, sans-serif;
+  --nav-font: "Montserrat", Arial, sans-serif;
+}
+
+body {
+  font-family: "Lora", Georgia, serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f5b041;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #f8c471;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f5b041;
+  border-left: 4px solid #f5b041;
+  padding-left: 12px;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fad7a0;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fad7a0;
+  font-style: italic;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d5d8dc;
+  text-transform: uppercase;
+}
+
+/* c. Pastraipos */
+p {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #e5e7e9;
+  text-align: justify;
+}
+
+
+.btn,
+button,
+input[type="submit"] {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  background-color: #f5b041;
+  color: #1b1b1b;
+  border: 2px solid #f5b041;
+  border-radius: 30px;
+  padding: 10px 28px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: transparent;
+  color: #f5b041;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(245, 176, 65, 0.4);
+}
+
+.btn:active,
+button:active,
+input[type="submit"]:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: none;
+  background-color: #d68910;
+  color: #ffffff;
+}
+
+
+a {
+  color: #f5b041;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a:active {
+  color: #d68910;
+}
+
+.about-page .page-title .heading,
+.resume-page .page-title .heading,
+.portfolio-page .page-title .heading {
+  padding: 120px 0 50px 0;
+}
+
+.about-page .section,
+.resume-page .section,
+.portfolio-page .section {
+  padding: 90px 0;
+}
+
+.about .content {
+  padding: 30px 40px;
+}
+
+.about .content ul li {
+  margin-bottom: 18px;
+}
+
+.skills .progress {
+  margin-bottom: 35px;
+  padding: 15px 20px;
+}
+
+/* "Patirtis" skiltis */
+.resume .resume-title {
+  margin: 40px 0 25px 0;
+}
+
+.resume .resume-item {
+  margin-bottom: 30px;
+  padding: 25px 30px;
+}
+
+/* "Atlikti darbai" skiltis */
+.portfolio .portfolio-filters {
+  margin-bottom: 50px;
+}
+
+.portfolio .portfolio-filters li {
+  margin: 5px 8px;
+  padding: 8px 20px;
+}
+
+.portfolio .isotope-container {
+  row-gap: 40px;
+}
+
+.about img {
+  border: 4px solid #f5b041;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(245, 176, 65, 0.35);
+}
+
+.about .content {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(245, 176, 65, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.skills .progress {
+  height: auto;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.skills .progress-bar-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skills .progress-bar {
+  background-color: #f5b041;
+}
+
+
+.resume .resume-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: none;
+  border-left: 5px solid #f5b041;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.resume .resume-item::before {
+  display: none;
+}
+
+.resume .resume-item h5 {
+  display: inline-block;
+  background: #f5b041;
+  color: #1b1b1b;
+  border-radius: 20px;
+  padding: 4px 14px;
+}
+
+
+.portfolio .portfolio-filters li {
+  border: 2px solid #f5b041;
+  border-radius: 25px;
+}
+
+.portfolio .portfolio-filters li.filter-active,
+.portfolio .portfolio-filters li:hover {
+  background: #f5b041;
+  color: #1b1b1b;
+}
+
+.portfolio .portfolio-content {
+  border: 2px solid rgba(245, 176, 65, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio .portfolio-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(245, 176, 65, 0.35);
+}
+
+
+.services .table-responsive {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.services .table {
+  margin-bottom: 0;
+}
+
+.services video,
+.services .ratio {
+  border: 2px solid #f5b041;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+.footer .social-links a {
+  border: 2px solid #f5b041;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(245, 176, 65, 0.3);
+}
+
+/* =========================================================
+   9 LD – 5 užduotis: komponentų stilių atnaujinimas
+   ========================================================= */
+
+/* 1) Navigacijos juosta */
+.header {
+  --background-color: rgba(18, 18, 18, 0.92);
+  background-color: var(--background-color);
+  border-bottom: 2px solid #f5b041;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+}
+
+.scrolled .header {
+  --background-color: rgba(18, 18, 18, 0.97);
+  box-shadow: 0 6px 20px rgba(245, 176, 65, 0.25);
+}
+
+.header .logo h1 {
+  color: #f5b041;
+  letter-spacing: 3px;
+}
+
+.navmenu {
+  --nav-hover-color: #f5b041;
+  --nav-dropdown-hover-color: #f5b041;
+}
+
+@media (min-width: 1200px) {
+  .navmenu > ul > li {
+    padding: 10px 6px;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .navmenu > ul > li > a:before {
+    display: none;
+  }
+
+  .navmenu li:hover > a {
+    color: #f5b041;
+    border-color: #f5b041;
+    text-decoration: none;
+  }
+
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: #1b1b1b;
+    background-color: #f5b041;
+    border-color: #f5b041;
+    box-shadow: 0 4px 12px rgba(245, 176, 65, 0.4);
+  }
+}
+
+/* 2) Mygtukas „į viršų“ */
+.scroll-top {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #f5b041, #d68910);
+  border: 2px solid #fad7a0;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(245, 176, 65, 0.45);
+}
+
+.scroll-top i {
+  font-size: 28px;
+  color: #1b1b1b;
+}
+
+.scroll-top:hover {
+  background: #1b1b1b;
+  border-color: #f5b041;
+  box-shadow: 0 8px 22px rgba(245, 176, 65, 0.6);
+}
+
+.scroll-top:hover i {
+  color: #f5b041;
+}
+
+
+/* =========================================================
+   Papildoma užduotis: 8 LD sąrašai ir lentelė (services.html)
+   ========================================================= */
+
+/* Nenumeruotas sąrašas – pseudo-elementas vietoj taško */
+.services ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.services ul > li {
+  position: relative;
+  padding: 8px 0 8px 30px;
+  color: #e5e7e9;
+}
+
+.services ul > li::before {
+  content: "\25C6"; /* ◆ */
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  color: #f5b041;
+}
+
+/* Įdėtinis sąrašas – atskiras stilius */
+.services ul ul {
+  margin: 8px 0 4px 10px;
+  padding: 6px 15px;
+  background: rgba(245, 176, 65, 0.08);
+  border-left: 3px dashed #f5b041;
+  border-radius: 0 12px 12px 0;
+}
+
+.services ul ul > li {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #fad7a0;
+  padding: 4px 0 4px 24px;
+}
+
+.services ul ul > li::before {
+  content: "\2192"; /* → */
+  top: 4px;
+  color: #fad7a0;
+}
+
+/* Numeruotas sąrašas – CSS skaitikliai (counters) */
+.services ol {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: etapas;
+}
+
+.services ol > li {
+  counter-increment: etapas;
+  position: relative;
+  padding: 10px 0 10px 50px;
+  margin-bottom: 8px;
+  color: #e5e7e9;
+}
+
+.services ol > li::before {
+  content: counter(etapas);
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  color: #1b1b1b;
+  background: #f5b041;
+  border-radius: 50%;
+}
+
+/* Lentelė */
+.services .table > :not(caption) > * > * {
+  padding: 14px 18px;
+  text-align: center;
+  vertical-align: middle;
+  color: #e5e7e9;
+  background-color: #1e1e1e;
+  border-color: rgba(245, 176, 65, 0.3);
+  box-shadow: none;
+}
+
+/* Antraštinė eilutė */
+.services .table thead th {
+  background-color: #f5b041;
+  color: #1b1b1b;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-color: #d68910;
+}
+
+/* Zebra stilius */
+.services .table tbody tr:nth-child(even) > * {
+  background-color: #2a2a2a;
+}
+
+/* Hover efektas */
+.services .table tbody tr:hover > * {
+  background-color: rgba(245, 176, 65, 0.18);
+  color: #ffffff;
+}
