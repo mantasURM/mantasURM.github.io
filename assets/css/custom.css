@@ -988,3 +988,184 @@ a:active {
   0%   { transform: translate(0, 0) rotate(0deg); }
   100% { transform: translate(160px, -90px) rotate(360deg); }
 }
+
+
+/* =========================================================
+   11 LD – JavaScript forma (contact.html)
+   ========================================================= */
+
+.contact .contact-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(245, 176, 65, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  padding: 32px 36px;
+}
+
+@media (max-width: 575px) {
+  .contact .contact-form {
+    padding: 22px 18px;
+  }
+}
+
+.contact .contact-form .form-label {
+  margin-bottom: 6px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fad7a0;
+}
+
+/* Visi laukai – vienodas stilius (text, email, tel, number) */
+.contact .contact-form .form-control {
+  color: var(--default-color);
+  background-color: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 10px 15px;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact .contact-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.contact .contact-form .form-control:focus {
+  border-color: #f5b041;
+  box-shadow: 0 0 0 3px rgba(245, 176, 65, 0.2);
+}
+
+/* Validacijos būsenos */
+.contact .contact-form .form-control.field-invalid {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.18);
+}
+
+.contact .contact-form .form-control.field-valid {
+  border-color: #58d68d;
+}
+
+.contact .contact-form .field-error {
+  min-height: 1.3rem;          /* rezervuota vieta – forma „nešokinėja“ */
+  margin-top: 5px;
+  font-size: 0.85rem;
+  line-height: 1.3rem;
+  color: #ff6b6b;
+}
+
+/* Vertinimo klausimų blokas */
+.contact .contact-form .rating-group {
+  padding: 18px 22px 6px;
+  border: 1px dashed rgba(245, 176, 65, 0.45);
+  border-radius: 16px;
+}
+
+.contact .contact-form .rating-group legend {
+  float: none;
+  width: auto;
+  margin: 0;
+  padding: 0 10px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f5b041;
+}
+
+/* Mygtukai */
+.contact .contact-form .form-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.contact .contact-form .form-actions button {
+  min-width: 150px;
+  padding: 10px 28px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  border: 2px solid #f5b041;
+  border-radius: 30px;
+}
+
+.contact .contact-form .form-actions button[type=submit] {
+  color: #1b1b1b;
+  background: #f5b041;
+}
+
+.contact .contact-form .form-actions button[type=submit]:hover:not(:disabled) {
+  color: #f5b041;
+  background: transparent;
+}
+
+.contact .contact-form .form-actions .btn-clear {
+  color: #f5b041;
+  background: transparent;
+}
+
+.contact .contact-form .form-actions .btn-clear:hover {
+  color: #1b1b1b;
+  background: #f5b041;
+}
+
+/* Neaktyvus „Siųsti“ */
+.contact .contact-form .form-actions button:disabled,
+.contact .contact-form .form-actions button:disabled:hover {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  color: #1b1b1b;
+  background: #f5b041;
+}
+
+/* Pateiktų duomenų blokas */
+.contact .form-result {
+  margin-top: 30px;
+  padding: 24px 30px;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 5px solid #f5b041;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.contact .form-result h4 {
+  margin-bottom: 16px;
+}
+
+.contact .form-result .result-list p {
+  margin: 0 0 6px 0;
+  text-align: left;
+  word-break: break-word;
+}
+
+.contact .form-result .result-list strong {
+  font-family: "Montserrat", Arial, sans-serif;
+  color: #fad7a0;
+}
+
+.contact .form-result .result-average {
+  margin: 16px 0 0 0;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(245, 176, 65, 0.45);
+  text-align: left;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.contact .form-result .average-score {
+  display: inline-block;
+  padding: 2px 14px;
+  border-radius: 20px;
+  font-weight: 800;
+  color: #1b1b1b;
+  background: #f5b041;
+}
+
+.contact .form-result .average-score[data-level="high"] { background: #58d68d; }
+.contact .form-result .average-score[data-level="low"]  { background: #ff6b6b; }
