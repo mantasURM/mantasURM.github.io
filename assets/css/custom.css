@@ -992,12 +992,3 @@ a:active {
   0%   { transform: translate(0, 0) rotate(0deg); }
   100% { transform: translate(160px, -90px) rotate(360deg); }
 }
-
-/* Vartotojams, kurie pageidauja mažiau judesio */
-@media (prefers-reduced-motion: reduce) {
-  .services.section,
-  .services.section::before,
-  .about-shapes .shape {
-    animation: none;
-  }
-}
