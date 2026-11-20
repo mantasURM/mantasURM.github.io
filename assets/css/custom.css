@@ -462,3 +462,382 @@ a:active {
   background-color: rgba(245, 176, 65, 0.18);
   color: #ffffff;
 }
+
+
+/* =========================================================
+   10 LD – Privaloma užduotis: kompetencijų pažangos modulis
+   (kompetencijos.html)
+   ========================================================= */
+
+.skills-page .page-title .heading {
+  padding: 120px 0 50px 0;
+}
+
+.skill-tracker {
+  --st-accent: #f5b041;
+  --st-accent-dark: #d68910;
+  --st-surface: rgba(255, 255, 255, 0.04);
+  --st-border: rgba(245, 176, 65, 0.35);
+  --st-planned: #85c1e9;
+  --st-learning: #f5b041;
+  --st-done: #58d68d;
+  padding: 90px 0;
+}
+
+/* --- Viršutinė sritis: lygis + statistika (Grid) --- */
+.skill-tracker .st-overview {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.skill-tracker .st-level-panel {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 32px;
+  background: var(--st-surface);
+  border: 1px solid var(--st-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Lygio ženklelis */
+.skill-tracker .st-level-badge {
+  flex: 0 0 auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--st-accent), var(--st-accent-dark));
+  color: #1b1b1b;
+  box-shadow: 0 0 0 6px rgba(245, 176, 65, 0.15), 0 8px 20px rgba(245, 176, 65, 0.35);
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.skill-tracker .st-level-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.skill-tracker .st-level-value {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.skill-tracker .st-level-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.skill-tracker .st-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  margin-bottom: 20px;
+}
+
+.skill-tracker .st-info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-tracker .st-info-label,
+.skill-tracker .st-stat-label {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #aab0b5;
+}
+
+.skill-tracker .st-info-value {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.skill-tracker .st-rank {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 16px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  color: var(--st-accent);
+  border: 2px solid var(--st-accent);
+  border-radius: 20px;
+}
+
+/* --- Progreso juosta --- */
+.skill-tracker .st-progress-head,
+.skill-tracker .st-progress-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.skill-tracker .st-progress-head {
+  margin-bottom: 8px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  color: #fad7a0;
+}
+
+.skill-tracker .st-progress-foot {
+  margin-top: 6px;
+  color: #aab0b5;
+}
+
+/* Likusi (neužpildyta) dalis */
+.skill-tracker .st-progress-track {
+  height: 18px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.06) 0 8px,
+    rgba(255, 255, 255, 0.02) 8px 16px
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Užpildyta dalis */
+.skill-tracker .st-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--st-accent-dark), var(--st-accent), #fad7a0);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(245, 176, 65, 0.6);
+}
+
+/* --- Statistika --- */
+.skill-tracker .st-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.skill-tracker .st-stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon value"
+    "icon label";
+  align-items: center;
+  column-gap: 16px;
+  padding: 14px 20px;
+  background: var(--st-surface);
+  border: 1px solid var(--st-border);
+  border-left: 5px solid var(--st-accent);
+  border-radius: 0 16px 16px 0;
+}
+
+.skill-tracker .st-stat i {
+  grid-area: icon;
+  font-size: 1.8rem;
+  color: var(--st-accent);
+}
+
+.skill-tracker .st-stat-value {
+  grid-area: value;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.skill-tracker .st-stat-label {
+  grid-area: label;
+}
+
+/* --- Lygių sistema --- */
+.skill-tracker .st-levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.skill-tracker .st-levels li {
+  flex: 1 1 200px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #aab0b5;
+  background: var(--st-surface);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
+.skill-tracker .st-levels li strong {
+  display: block;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: #e5e7e9;
+}
+
+.skill-tracker .st-levels li.is-current {
+  color: #1b1b1b;
+  background: var(--st-accent);
+  border: 1px solid var(--st-accent);
+}
+
+.skill-tracker .st-levels li.is-current strong {
+  color: #1b1b1b;
+}
+
+/* --- Kanban lenta (Grid) --- */
+.skill-tracker .st-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.skill-tracker .st-column {
+  --col-color: var(--st-accent);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  min-height: 260px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 4px solid var(--col-color);
+  border-radius: 16px;
+}
+
+.skill-tracker .st-column--planned  { --col-color: var(--st-planned); }
+.skill-tracker .st-column--learning { --col-color: var(--st-learning); }
+.skill-tracker .st-column--done     { --col-color: var(--st-done); }
+
+.skill-tracker .st-column-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-tracker .st-column-head h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--col-color);
+}
+
+.skill-tracker .st-count {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  color: #1b1b1b;
+  background: var(--col-color);
+  border-radius: 15px;
+}
+
+/* Įgūdžio kortelė */
+.skill-tracker .st-card {
+  padding: 16px 18px;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 4px solid var(--col-color);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-tracker .st-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+}
+
+.skill-tracker .st-card-title {
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
+  font-style: normal;
+  color: #ffffff;
+}
+
+.skill-tracker .st-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tracker .st-status {
+  padding: 3px 12px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+}
+
+.skill-tracker .st-status--planned  { color: var(--st-planned); }
+.skill-tracker .st-status--learning { color: var(--st-learning); }
+.skill-tracker .st-status--done     { color: var(--st-done); }
+
+.skill-tracker .st-xp {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  color: #1b1b1b;
+  background: var(--st-accent);
+  padding: 3px 12px;
+  border-radius: 8px;
+}
+
+/* --- Prisitaikymas prie ekrano dydžio --- */
+@media (max-width: 991px) {
+  .skill-tracker .st-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-tracker .st-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .skill-tracker .st-board {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-tracker .st-column {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .skill-tracker .st-level-panel {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px;
+  }
+
+  .skill-tracker .st-info-row {
+    justify-content: center;
+  }
+
+  .skill-tracker .st-stats {
+    grid-template-columns: 1fr;
+  }
+}
